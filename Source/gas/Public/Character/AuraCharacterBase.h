@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Druid Mechanics
 
 #pragma once
 
@@ -17,20 +17,19 @@ class GAS_API AAuraCharacterBase : public ACharacter, public IAbilitySystemInter
 
 public:
 	AAuraCharacterBase();
-
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
-
 protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
-		TObjectPtr<USkeletalMeshComponent> Weapon;
-
-
-	UPROPERTY()
-		TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+	TObjectPtr<USkeletalMeshComponent> Weapon;
 
 	UPROPERTY()
-		TObjectPtr<UAttributeSet> AttributeSet;
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+
+	UPROPERTY()
+	TObjectPtr<UAttributeSet> AttributeSet;
+
+	virtual void InitAbilityActorInfo();
 };
