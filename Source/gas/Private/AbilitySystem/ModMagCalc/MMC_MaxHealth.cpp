@@ -1,6 +1,7 @@
 
 #include "AbilitySystem/ModMagCalc/MMC_MaxMana.h"
 
+
 #include "AbilitySystem/AuraAttributeSet.h"
 #include "Interaction/CombatInterface.h"
 
