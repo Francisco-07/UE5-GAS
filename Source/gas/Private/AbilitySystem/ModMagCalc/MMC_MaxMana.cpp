@@ -1,6 +1,4 @@
-
 #include "AbilitySystem/ModMagCalc/MMC_MaxHealth.h"
-
 
 #include "AbilitySystem/AuraAttributeSet.h"
 #include "Interaction/CombatInterface.h"
