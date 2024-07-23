@@ -30,6 +30,8 @@ public:
 	FGameplayTag Attributes_Secondary_ManaRegeneration;
 	FGameplayTag Attributes_Secondary_MaxHealth;
 	FGameplayTag Attributes_Secondary_MaxMana;
+	FGameplayTag Attributes_Secondary_CriticalTest;
+
 
 protected:
 

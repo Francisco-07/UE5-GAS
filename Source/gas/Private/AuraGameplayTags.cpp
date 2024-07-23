@@ -81,4 +81,9 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("Attributes.Secondary.MaxMana"),
 		FString("Maximum amount of Mana obtainable")
 	);
+
+	GameplayTags.Attributes_Secondary_CriticalTest = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Attributes.Secondary.CriticalTest"),
+		FString("MaximCriticalTestt CriticalTestobtainable")
+	);
 }

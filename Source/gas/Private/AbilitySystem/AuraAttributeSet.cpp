@@ -28,6 +28,7 @@ UAuraAttributeSet::UAuraAttributeSet()
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ManaRegeneration, GetManaRegenerationAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxMana, GetMaxManaAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalTest, GetCriticalTestAttribute);
 }
 
 void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -53,6 +54,8 @@ void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, ManaRegeneration, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxMana, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, CriticalTest, COND_None, REPNOTIFY_Always);
+
 
 	// Vital Attributes
 
@@ -203,4 +206,10 @@ void UAuraAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHeal
 void UAuraAttributeSet::OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, MaxMana, OldMaxMana);
+
 }
+
+void UAuraAttributeSet::OnRep_CriticalTest(const FGameplayAttributeData & OldCriticalTest) const
+	{
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, CriticalTest, OldCriticalTest);
+	}

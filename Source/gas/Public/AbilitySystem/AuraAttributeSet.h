@@ -132,6 +132,10 @@ public:
 	FGameplayAttributeData MaxMana;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, MaxMana);
 
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalTest, Category = "Secondary Attributes")
+	FGameplayAttributeData CriticalTest;
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, CriticalTest);
+
 	/*
 	 * Vital Attributes
 	 */
@@ -191,6 +195,9 @@ public:
 
 	UFUNCTION()
 	void OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const;
+
+	UFUNCTION()
+	void OnRep_CriticalTest(const FGameplayAttributeData& OldCriticalTest) const;
 
 private:
 
